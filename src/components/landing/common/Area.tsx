@@ -5,9 +5,8 @@ interface AreaProps {
 }
 export default function Area (props: AreaProps) {
   return (
-    <div className={`
-      flex justify-center w-full
-     
+    <div id={props.id ?? ''} className={`
+      flex justify-center w-full     
       ${props.className ?? ''}
     `}>
       <div className={`

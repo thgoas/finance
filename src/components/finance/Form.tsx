@@ -24,7 +24,7 @@ export default function Form (props: FormProps) {
     flex flex-col border border-zinc-700
     rounded-xl overflow-hidden
 `}>
-    <div className="bg-black py-3 px-7 text-zinc-400">Formulário</div>
+    <div className="bg-black py-3 px-7 text-zinc-400">{!data.id ? 'Nova Transação' : 'Editar Transação'}</div>
     <div className="flex flex-col gap-4 p-4 sm:p-7">
         <TextInput
             label="Descrição"
