@@ -32,7 +32,7 @@ export default function Finance() {
       <div className="flex justify-between">
         <FieldMonthYear date={date} dateChanged={changeDate} />
         <div className="flex gap-5 items-center">
-          <NotificationSystem />
+         
           <Button
             className="bg-blue-500 "
             leftIcon={<IconPlus />}
