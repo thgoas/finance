@@ -5,7 +5,7 @@ import List from './List'
 import { emptyTransaction } from '@/logic/core/finance/Transaction'
 import Form from './Form'
 import NotFound from '../template/NotFound'
-import { Button, SegmentedControl } from '@mantine/core'
+import { ActionIcon, Button, SegmentedControl } from '@mantine/core'
 import { IconLayoutGrid, IconList, IconPlus } from '@tabler/icons-react'
 
 import useTransaction, { ExhibitionType } from '@/data/hooks/useTransaction'
@@ -29,17 +29,23 @@ export default function Finance() {
 
   function renderControls() {
     return (
-      <div className="flex justify-between">
+      <div className="flex justify-between lg:flex-row">
         <FieldMonthYear date={date} dateChanged={changeDate} />
         <div className="flex gap-5 items-center">
-         
           <Button
-            className="bg-blue-500 "
+            className="bg-blue-500 hidden sm:inline "
             leftIcon={<IconPlus />}
             onClick={() => select(emptyTransaction)}
           >
             Nova Transação
           </Button>
+          <ActionIcon
+            className="bg-blue-500 sm:hidden ml-4"
+            variant="filled"
+            color="blue" size="lg" 
+          >
+            <IconPlus />
+          </ActionIcon>
           <SegmentedControl
             data={[
               { label: <IconList />, value: 'list' },
@@ -64,7 +70,6 @@ export default function Finance() {
     <Page>
       <Header />
       <Content className="gap-5">
-        
         {transaction ? (
           <Form
             transaction={transaction}
