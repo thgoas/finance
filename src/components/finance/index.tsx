@@ -84,7 +84,10 @@ export default function Finance() {
             {renderTransaction()}
           </>
         ) : (
+          <>
+          {renderControls()}
           <NotFound>Nenhuma Transação encontrada</NotFound>
+          </>
         )}
       </Content>
     </Page>
